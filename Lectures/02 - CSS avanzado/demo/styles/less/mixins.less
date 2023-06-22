@@ -1,0 +1,15 @@
+.alineacion-flex(@direccion) {
+  display: flex;
+  flex-direction: @direccion;
+  align-items: center;
+}
+
+.boton {
+  background-color: red;
+}
+
+.boton-borde-blanco {
+  &:extend(.boton);
+  border: 1px solid white;
+  color: white;
+}

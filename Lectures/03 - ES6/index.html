@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo AJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="respuesta"></div>
+    <button class="boton">AJAX!</button>
+    <script type="text/javascript">
+      $(".boton").on("click", function () {
+        // GET AJAX
+        $.get("https://jsonplaceholder.typicode.com/users", function (data) {
+          console.log(data);
+          let info = document.createElement("h1");
+          info.textContent = `User: ${data[0].name}`;
+          // let info2 = document.createElement("h2");
+          // info2.textContent = `Id: ${data.id}`;
+          // let info3 = document.createElement("h3");
+          // info3.textContent = `Tipo: ${data.types[0].type.name}`;
+
+          $("#respuesta").append(info);
+          // $("#respuesta").append(info2);
+          // $("#respuesta").append(info3);
+        });
+      });
+    </script>
+  </body>
+</html>
